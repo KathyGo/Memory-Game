@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Memory Game!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Memory Game!</h1>
+    <div id='scoreContainer'>
+      <label for="" class='score'> Your Score
+        <span id='yourScore'> -- </span>
+      </label>
+      <label for="" class='score'> Best Score
+        <span id='bestScore'></span>
+      </label>
+
+      <form action="index.html" target='_self' id='playAgainForm'>
+        <input type="submit" value="Play Again" id = 'playAgain'>
+      </form>
+    </div>
+   
+    <div id="game" claseName= "red guessed">
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

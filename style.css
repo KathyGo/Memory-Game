@@ -1,0 +1,81 @@
+h1 {
+	text-align: center;
+	font-size: 3rem;
+}
+
+h2 {
+	text-align: center;
+	font-size: 5rem;
+	padding: 100px 0;
+}
+/* 
+.title {
+	display: inline-block;
+} */
+
+body {
+	background-color: lightblue;
+	color: teal;
+	text-align: center;
+}
+
+#startForm {
+	text-align: center;
+}
+
+#start {
+	font-size: 2rem;
+	color: white;
+	font-weight: bold;
+	width: 15rem;
+	height: 50px;
+	border-radius: 10px;
+	background-color: teal;
+	margin: auto;
+}
+
+#scoreContainer {
+	text-align: center;
+	position: relative;
+	margin: 20px 0 50px 0;
+}
+
+.score {
+	margin: 30px 50px;
+	font-size: 1.5rem;
+}
+
+#playAgainForm {
+	display: inline-block;
+	position: absolute;
+	right: 20%;
+}
+
+#playAgain {
+	font-size: 1rem;
+	color: white;
+	font-weight: bold;
+	width: 10rem;
+	height: 30px;
+	border-radius: 5px;
+	background-color: teal;
+	margin: auto;
+}
+
+#game {
+	width: 70%;
+	margin-left: 15%;
+}
+
+#game div {
+	border: 1px solid black;
+	width: 15%;
+	height: 100px;
+	margin: 10px 10px;
+	display: inline-block;
+}
+
+.clicked {
+	transition: 1s;
+	backface-visibility: visible;
+}
