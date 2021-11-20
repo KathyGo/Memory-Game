@@ -1,3 +1,4 @@
+//document.addEventListener('DOMContentLoaded', function() {
 const gameContainer = document.getElementById('game');
 
 const COLORS = [
@@ -112,7 +113,8 @@ function handleCardClick(event) {
 		if (clickCounter <= 2) {
 			// console.log('you just clicked', event.target);
 			const color = event.target.className;
-			if (event.target.style.backgroundColor !== color) {
+			console.log(color);
+			if (event.target.style.backgroundColor !== color && !event.target.classList.contains('clicked')) {
 				yourScore++;
 				document.getElementById('yourScore').innerText = yourScore;
 				event.target.classList.add('clicked');
@@ -180,6 +182,7 @@ function handleCardClick(event) {
 		}
 	}
 }
+//});
 
 function countUnmatchedCards() {
 	const cards = gameContainer.children;
