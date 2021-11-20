@@ -5,13 +5,20 @@ h1 {
 
 h2 {
 	text-align: center;
-	font-size: 5rem;
 	padding: 100px 0;
 }
-/* 
+
 .title {
-	display: inline-block;
-} */
+	margin-top: 20px;
+}
+
+.letters {
+	font-size: 6rem;
+	font-family: Montserrat;
+	transition: 1s;
+	font-style: italic;
+	padding: 5px;
+}
 
 body {
 	background-color: lightblue;
@@ -76,6 +83,11 @@ body {
 }
 
 .clicked {
-	transition: 1s;
+	/* transition: 1s; */
 	backface-visibility: visible;
+}
+
+.best {
+	font-size: 2rem;
+	margin-bottom: 30px;
 }
