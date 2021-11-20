@@ -133,37 +133,27 @@ window.addEventListener('DOMContentLoaded', function() {
 							colorMatchArray[1].removeEventListener('click', handleCardClick);
 							colorMatchArray[0].className = 'matched';
 							colorMatchArray[1].className = 'matched';
+							clickCounter = 0;
+							colorMatchArray = [];
 							// console.log(colorMatchArray);
 							// console.log('matchedColor:', matchedColor);
+						} else {
+							setTimeout(function() {
+								for (let card of colorMatchArray) {
+									if (card.className !== 'matched') {
+										card.classList.remove('clicked');
+										card.style.backgroundColor = '';
+									}
+								}
+
+								colorMatchArray = [];
+								clickCounter = 0;
+							}, 1000);
 						}
 					}
 					//console.log(colorMatchArray);
-
 					leftCard = countUnmatchedCards();
-					if (leftCard === 0) {
-						if (bestScore === null || bestScore > yourScore) {
-							bestScore = yourScore;
-							localStorage.setItem('bestScore', bestScore);
-							alert(`You Won! Best score: ${yourScore}`);
-						} else {
-							alert(`your score: ${yourScore}`);
-						}
-						document.getElementById('yourScore').innerText = yourScore;
-						document.getElementById('bestScore').innerText = bestScore;
-					}
-					setTimeout(function() {
-						for (let card of colorMatchArray) {
-							if (card.className !== 'matched') {
-								card.classList.remove('clicked');
-								card.style.backgroundColor = '';
-							}
-						}
-
-						colorMatchArray = [];
-
-						clickCounter--;
-					}, 1000);
-
+					gameOver(leftCard, bestScore, yourScore);
 					//if all the card's class name==="matched", then Game over
 				} else {
 					clickCounter--;
@@ -183,5 +173,19 @@ window.addEventListener('DOMContentLoaded', function() {
 			}
 		}
 		return leftCardCount;
+	}
+
+	function gameOver(leftCard, bestScore, yourScore) {
+		if (leftCard === 0) {
+			if (bestScore === null || bestScore > yourScore) {
+				bestScore = yourScore;
+				localStorage.setItem('bestScore', bestScore);
+				alert(`You Won! Best score: ${yourScore}`);
+			} else {
+				alert(`your score: ${yourScore}`);
+			}
+			document.getElementById('yourScore').innerText = yourScore;
+			document.getElementById('bestScore').innerText = bestScore;
+		}
 	}
 });
